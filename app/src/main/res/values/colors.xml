@@ -1,0 +1,11 @@
+<resources>
+    <color name="mub_bg">#E9F5F9</color>
+    <color name="mub_primary">#0C5F72</color>
+    <color name="mub_primaryDark">#063D4A</color>
+    <color name="mub_accent">#00A9CF</color>
+    <color name="mub_text_dark">#1E2A2E</color>
+    <color name="mub_text_muted">#7A8A90</color>
+    <color name="mub_card">#FFFFFF</color>
+    <color name="mub_wave1">#F0F1F2</color>
+    <color name="mub_wave2">#ECEDEE</color>
+</resources>

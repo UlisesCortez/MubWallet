@@ -1,0 +1,28 @@
+<resources>
+    <style name="Theme.MUBWallet" parent="Theme.Material3.Light.NoActionBar">
+        <!-- puedes quedarte en MaterialComponents si prefieres -->
+        <item name="android:colorBackground">@color/mub_bg</item>
+        <item name="colorSurface">@color/mub_card</item>
+        <item name="colorPrimary">@color/mub_primary</item>
+        <item name="colorPrimaryContainer">@color/mub_primaryDark</item>
+        <item name="textInputStyle">@style/Mub.TextInputStyle</item>
+        <item name="materialButtonStyle">@style/Mub.Button</item>
+    </style>
+
+    <style name="Mub.TextInputStyle" parent="Widget.Material3.TextInputLayout.OutlinedBox">
+        <item name="boxBackgroundMode">outline</item>
+        <item name="boxStrokeColor">@color/mub_primary</item>
+        <item name="boxCornerRadiusTopStart">14dp</item>
+        <item name="boxCornerRadiusTopEnd">14dp</item>
+        <item name="boxCornerRadiusBottomStart">14dp</item>
+        <item name="boxCornerRadiusBottomEnd">14dp</item>
+        <item name="hintTextColor">@color/mub_text_muted</item>
+        <item name="android:textColor">@color/mub_text_dark</item>
+    </style>
+
+    <style name="Mub.Button" parent="Widget.Material3.Button">
+        <item name="android:insetLeft">0dp</item>
+        <item name="android:insetRight">0dp</item>
+        <item name="cornerRadius">14dp</item>
+    </style>
+</resources>
