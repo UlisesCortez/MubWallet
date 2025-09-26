@@ -29,12 +29,10 @@
             android:name=".DashboardActivity"
             android:exported="false" />
 
-        <!-- Si existe MainActivity pero no la usas, la puedes eliminar o dejarla así -->
-        <!--
         <activity
-            android:name=".MainActivity"
+            android:name=".AddCardActivity"
             android:exported="false" />
-        -->
+
 
     </application>
 </manifest>
