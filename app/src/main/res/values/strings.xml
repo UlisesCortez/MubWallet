@@ -3,4 +3,5 @@
     <string name="wallet_title">Wallet</string>
     <string name="scan_desc">Scan</string>
     <string name="add_desc">Add</string>
+    <string name="calendar_desc">Add</string>
 </resources>
