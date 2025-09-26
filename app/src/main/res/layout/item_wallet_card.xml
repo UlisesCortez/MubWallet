@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:layout_marginTop="12dp"
+    app:cardCornerRadius="18dp"
+    app:cardUseCompatPadding="true"
+    app:cardElevation="6dp">
+
+    <!-- Fondo degradado configurable por estilo/color -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- Marca / banco -->
+        <TextView
+            android:id="@+id/tvBank"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="BBVA"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textColor="@android:color/white"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="16dp"/>
+
+        <!-- Chip/Contactless (placeholder) -->
+        <TextView
+            android:id="@+id/tvContactless"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="(((("
+            android:textSize="18sp"
+            android:textColor="@android:color/white"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="18dp"
+            android:layout_marginTop="18dp"/>
+
+        <!-- Nombre/alias de la tarjeta -->
+        <TextView
+            android:id="@+id/tvAlias"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Azul"
+            android:textSize="14sp"
+            android:textColor="@android:color/white"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="18dp"
+            android:layout_below="@id/tvContactless"
+            android:layout_marginTop="4dp"/>
+
+        <!-- Últimos dígitos -->
+        <TextView
+            android:id="@+id/tvDigits"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="•••• 1234"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="18dp"
+            android:layout_marginBottom="20dp"/>
+
+        <!-- Marca (Visa/Mastercard) placeholder -->
+        <TextView
+            android:id="@+id/tvBrand"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mastercard"
+            android:textSize="14sp"
+            android:textColor="@android:color/white"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="18dp"
+            android:layout_marginBottom="20dp"/>
+    </RelativeLayout>
+</com.google.android.material.card.MaterialCardView>
