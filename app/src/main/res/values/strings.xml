@@ -3,6 +3,7 @@
     <string name="wallet_title">Wallet</string>
     <string name="scan_desc">Scan</string>
     <string name="add_desc">Add</string>
+    <string name="calendar_title">Calendario de Pagos</string>
 
     <string-array name="banks_array">
         <item>Selecciona banco…</item>
