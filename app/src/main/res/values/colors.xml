@@ -8,4 +8,8 @@
     <color name="mub_card">#FFFFFF</color>
     <color name="mub_wave1">#F0F1F2</color>
     <color name="mub_wave2">#ECEDEE</color>
+    <color name="black">#000000</color>
+    <color name="gray">#808080</color>
+    <color name="purple_200">#BB86FC</color>
+
 </resources>
