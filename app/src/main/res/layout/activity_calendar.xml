@@ -33,14 +33,6 @@
             android:selectedWeekBackgroundColor="@color/purple_200"/>
     </com.google.android.material.card.MaterialCardView>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Aquí aparecerán tus cobros próximos..."
-        android:gravity="center"
-        android:padding="16dp"
-        android:textColor="@color/mub_primary"/>
-
 
 
 </LinearLayout>
