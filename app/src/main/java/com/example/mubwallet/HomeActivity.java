@@ -58,10 +58,7 @@ public class HomeActivity extends AppCompatActivity {
             addCardLauncher.launch(i);
         });
 
-        findViewById(R.id.fabCalendar).setOnClickListener(v -> {
-            Intent i = new Intent(this, CalendarActivity.class);
-            startActivity(i);
-        });
+
     }
 
     private int pickBackgroundForBank(String bank) {

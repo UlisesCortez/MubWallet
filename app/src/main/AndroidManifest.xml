@@ -33,7 +33,6 @@
             android:name=".AddCardActivity"
             android:exported="false" />
 
-        <activity android:name=".CalendarActivity"/>
 
     </application>
 </manifest>

@@ -13,27 +13,24 @@ import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
-
 public class AddCardActivity extends AppCompatActivity {
 
-    private TextInputLayout tilBank, tilAlias, tilDigits, tilBrand;
-    private TextInputEditText etBank, etAlias, etDigits, etBrand, etFirstFour;
+    private TextInputLayout tilBank, tilAlias, tilBrand, tilCard;
+    private TextInputEditText etBank, etAlias, etBrand, etCard;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_card);
 
-        tilBank   = findViewById(R.id.tilBank);
-        tilAlias  = findViewById(R.id.tilAlias);
-        tilDigits = findViewById(R.id.tilDigits);
-        tilBrand  = findViewById(R.id.tilBrand);
-
-        etBank     = findViewById(R.id.etBank);
-        etAlias    = findViewById(R.id.etAlias);
-        etDigits   = findViewById(R.id.etDigits);
-        etBrand    = findViewById(R.id.etBrand);
-        etFirstFour= findViewById(R.id.firDigits);
+        tilBank = findViewById(R.id.tilBank);
+        tilAlias = findViewById(R.id.tilAlias);
+        tilBrand = findViewById(R.id.tilBrand);
+        tilCard = findViewById(R.id.firsDigits);
+        etBank = findViewById(R.id.etBank);
+        etAlias = findViewById(R.id.etAlias);
+        etBrand = findViewById(R.id.etBrand);
+        etCard  = findViewById(R.id.firDigits);
 
         etBank.setFocusable(false);
         etBank.setClickable(false);
@@ -41,24 +38,24 @@ public class AddCardActivity extends AppCompatActivity {
         etBank.setLongClickable(false);
         etBank.setTextIsSelectable(false);
 
-        etFirstFour.addTextChangedListener(new TextWatcher() {
+        etCard.addTextChangedListener(new TextWatcher() {
             @Override public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                if (s != null && s.length() == 4) {
-                    String prefix = s.toString();
+                if (s != null && s.length() >= 4) {
+                    String prefix = s.toString().substring(0, 4);
                     String bank = detectBank(prefix);
                     etBank.setText(bank != null ? bank : "");
                     if (bank != null) tilBank.setError(null);
 
                     String brand = detectBrand(bank);
                     etBrand.setText(brand);
-
                 } else {
                     etBank.setText("");
                     etBrand.setText("");
                 }
+                tilCard.setError(null);
             }
 
             @Override public void afterTextChanged(Editable s) {}
@@ -66,15 +63,21 @@ public class AddCardActivity extends AppCompatActivity {
 
         MaterialButton btnSave = findViewById(R.id.btnSave);
         btnSave.setOnClickListener(v -> {
-            String bank   = text(etBank);
-            String alias  = text(etAlias);
-            String digits = text(etDigits);
-            String brand  = text(etBrand);
+            String bank      = text(etBank);
+            String alias     = text(etAlias);
+            String brand     = text(etBrand);
+            String cardNum   = text(etCard);
 
-            if (TextUtils.isEmpty(bank))   { tilBank.setError("Ingresa el banco"); return; }   else tilBank.setError(null);
-            if (TextUtils.isEmpty(alias))  { tilAlias.setError("Ingresa un alias"); return; }  else tilAlias.setError(null);
-            if (digits.length() != 4)      { tilDigits.setError("Deben ser 4 dígitos"); return; } else tilDigits.setError(null);
-            if (TextUtils.isEmpty(brand))  { tilBrand.setError("Ingresa la marca"); return; }  else tilBrand.setError(null);
+            if (TextUtils.isEmpty(cardNum) || cardNum.length() != 16) {
+                tilCard.setError("La tarjeta debe tener 16 dígitos");
+                return;
+            } else tilCard.setError(null);
+
+            if (TextUtils.isEmpty(bank))   { tilBank.setError("Ingresa el banco"); return; } else tilBank.setError(null);
+            if (TextUtils.isEmpty(alias))  { tilAlias.setError("Ingresa un alias"); return; } else tilAlias.setError(null);
+            if (TextUtils.isEmpty(brand))  { tilBrand.setError("Ingresa la marca"); return; } else tilBrand.setError(null);
+
+            String digits = cardNum.substring(cardNum.length() - 4);
 
             Intent data = new Intent();
             data.putExtra("bank", bank);
@@ -100,7 +103,6 @@ public class AddCardActivity extends AppCompatActivity {
             default:     return null;
         }
     }
-
 
     private String detectBrand(String bank) {
         if (bank == null) return "";

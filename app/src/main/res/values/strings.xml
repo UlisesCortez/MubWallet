@@ -10,4 +10,16 @@
         <item>Santander</item>
         <item>BBVA</item>
     </string-array>
+
+    <string name="calendar_title">Calendario</string>
+    <string name="calendar_description">Consulta y administra tus eventos.</string>
+    <string name="calendar_empty">No hay eventos para mostrar</string>
+    <string name="calendar_add">Agregar evento</string>
+    <string name="calendar_today">Hoy</string>
+    <string name="calendar_month">Mes</string>
+    <string name="calendar_week">Semana</string>
+    <string name="calendar_day">Día</string>
+
+    <string name="calendar_card_title">Próximos eventos</string>
+    <string name="calendar_card_subtitle">Toca para ver el calendario</string>
 </resources>
