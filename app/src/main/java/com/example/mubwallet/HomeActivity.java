@@ -27,10 +27,8 @@ public class HomeActivity extends AppCompatActivity {
                     String digits = result.getData().getStringExtra("digits");
                     String brand = result.getData().getStringExtra("brand");
 
-                    // Formateamos los últimos 4
                     String last = "•••• " + digits;
 
-                    // Elegimos background según banco (puedes ampliar la lista)
                     int bg = pickBackgroundForBank(bank);
 
                     Card c = new Card(bank, alias, last, brand, bg);
