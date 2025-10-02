@@ -55,6 +55,9 @@ public class HomeActivity extends AppCompatActivity {
             Intent i = new Intent(this, AddCardActivity.class);
             addCardLauncher.launch(i);
         });
+        findViewById(R.id.btnCalendar).setOnClickListener(v -> {
+            startActivity(new Intent(this, CalendarActivity.class));
+        });
 
 
     }
@@ -65,7 +68,6 @@ public class HomeActivity extends AppCompatActivity {
         if (b.contains("santander")) return R.drawable.bg_card_santander;
         if (b.contains("bbva"))      return R.drawable.bg_card_bbva;
         if (b.contains("nu"))        return R.drawable.bg_card_nu;
-        // fallback
         return R.drawable.bg_card_santander;
     }
 }

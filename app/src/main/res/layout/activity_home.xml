@@ -76,14 +76,17 @@
         app:layout_constraintEnd_toEndOf="parent">
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/fabCalendar"
+            android:id="@+id/btnCalendar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:contentDescription="@string/calendar_desc"
-            app:srcCompat="@android:drawable/ic_menu_my_calendar"
+            android:contentDescription="Calendario"
+            app:srcCompat="@android:drawable/ic_menu_month"
             app:tint="@android:color/white"
-            android:layout_marginBottom="16dp"
-            android:layout_marginEnd="15dp"/>
+            app:backgroundTint="?attr/colorPrimary"
+            android:layout_margin="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/fabAdd"
