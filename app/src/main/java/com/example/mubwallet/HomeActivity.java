@@ -56,6 +56,11 @@ public class HomeActivity extends AppCompatActivity {
             addCardLauncher.launch(i);
         });
 
+        findViewById(R.id.fabAdd).setOnClickListener(v -> {
+            Intent i = new Intent(this, AddCardActivity.class);
+            addCardLauncher.launch(i);
+        });
+
 
     }
 

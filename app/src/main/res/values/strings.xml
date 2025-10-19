@@ -12,7 +12,7 @@
     </string-array>
 
     <string name="calendar_title">Calendario</string>
-    <string name="calendar_description">Consulta y administra tus eventos.</string>
+    <string name="calendar_desc">Consulta y administra tus eventos.</string>
     <string name="calendar_empty">No hay eventos para mostrar</string>
     <string name="calendar_add">Agregar evento</string>
     <string name="calendar_today">Hoy</string>
