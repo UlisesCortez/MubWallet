@@ -33,6 +33,9 @@
             android:name=".AddCardActivity"
             android:exported="false" />
 
+        <activity
+            android:name=".CardDetailActivity"
+            android:exported="false" />
 
     </application>
 </manifest>

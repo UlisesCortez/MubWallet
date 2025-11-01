@@ -1,8 +1,10 @@
 package com.example.mubwallet.Database;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.database.Cursor;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
@@ -61,7 +63,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 "FOREIGN KEY(subscription_id) REFERENCES Subscriptions(id_Subscription))");
 
         db.execSQL("INSERT INTO Users (Name, last_Name, password) VALUES ('Brayan', 'root', '1234')");
-
     }
 
     @Override
@@ -71,5 +72,37 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS Cards");
         db.execSQL("DROP TABLE IF EXISTS Users");
         onCreate(db);
+    }
+
+    // ---- UPDATE: editar Bank y Type de una tarjeta por id_Card ----
+    public int updateCardBankType(int idCard, String bank, String type) {
+        SQLiteDatabase db = getWritableDatabase();
+        try {
+            ContentValues cv = new ContentValues();
+            cv.put("Bank", bank);
+            cv.put("Type", type);
+            return db.update("Cards", cv, "id_Card = ?", new String[]{String.valueOf(idCard)});
+        } finally {
+            db.close();
+        }
+    }
+
+    // ---- DELETE: borrar tarjeta por id_Card ----
+    public int deleteCard(int idCard) {
+        SQLiteDatabase db = getWritableDatabase();
+        try {
+            return db.delete("Cards", "id_Card = ?", new String[]{String.valueOf(idCard)});
+        } finally {
+            db.close();
+        }
+    }
+
+    // (Opcional) Método utilitario por si luego quieres traer una tarjeta por id
+    public Cursor getCardById(int idCard) {
+        SQLiteDatabase db = getReadableDatabase();
+        return db.rawQuery(
+                "SELECT id_Card, id_User, num_tarjeta, expiration_date, CVV, Bank, Type FROM Cards WHERE id_Card = ?",
+                new String[]{String.valueOf(idCard)}
+        );
     }
 }
