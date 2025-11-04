@@ -29,13 +29,13 @@
             android:name=".DashboardActivity"
             android:exported="false" />
 
-        <activity
-            android:name=".AddCardActivity"
-            android:exported="false" />
+        <activity android:name=".AddCardActivity" android:exported="false" />
 
-        <activity
-            android:name=".CardDetailActivity"
-            android:exported="false" />
+        <activity android:name=".CardDetailActivity" android:exported="false" />
+
+        <activity android:name=".CalendarActivity" android:exported="false" />
+        <activity android:name=".AddSubscriptionActivity" android:exported="false" />
+        <activity android:name=".GraphActivity" android:exported="false"/>
 
     </application>
 </manifest>

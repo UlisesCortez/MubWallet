@@ -140,4 +140,6 @@ public class CardDetailActivity extends AppCompatActivity {
         if (b.contains("nu"))        return R.drawable.bg_card_nu;
         return R.drawable.bg_card_santander;
     }
+
+
 }

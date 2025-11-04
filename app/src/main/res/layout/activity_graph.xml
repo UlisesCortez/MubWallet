@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="#F4F7FC"
+    android:padding="16dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tvGraphTitle"
+        android:text="Gasto por día"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:textColor="#0D1313"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <!-- Aquí insertamos la vista de barras programáticamente -->
+    <FrameLayout
+        android:id="@+id/graphContainer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:layout_weight="1"/>
+</LinearLayout>

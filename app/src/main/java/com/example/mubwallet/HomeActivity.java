@@ -49,8 +49,19 @@ public class HomeActivity extends AppCompatActivity {
             attachItemTapListener();
         }
 
-        if (findViewById(R.id.fabAdd) != null) {
-            findViewById(R.id.fabAdd).setOnClickListener(v -> {
+        // ---- FAB para abrir pantalla de suscripciones (CalendarActivity) ----
+        View fabCalendar = findViewById(R.id.fabCalendar);
+        if (fabCalendar != null) {
+            fabCalendar.setOnClickListener(v -> {
+                Intent i = new Intent(this, CalendarActivity.class);
+                startActivity(i);
+            });
+        }
+
+        // ---- FAB para agregar nueva tarjeta ----
+        View fabAdd = findViewById(R.id.fabAdd);
+        if (fabAdd != null) {
+            fabAdd.setOnClickListener(v -> {
                 Intent i = new Intent(this, AddCardActivity.class);
                 addCardLauncher.launch(i);
             });
@@ -66,7 +77,7 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     private void loadCardsFromDb() {
-        int idUser = 1; // TODO: usar el id real del usuario
+        int idUser = 1; // TODO: usar el id real del usuario logueado
 
         cardList.clear();
         cardIds.clear();
